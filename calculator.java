@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class Calculator {
+    public static void main (String[] args){
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Enter two numbers: ");
+        // nextDouble() reads the next double from the keyboard
+        double first = reader.nextDouble();
+        double second = reader.nextDouble();
+        System.out.println("Enter an operator (+, -, *, /): ");
+        char operator = reader.next().charAt(0);
+        double result;
+
+        //switch case for each of the operations
+        switch(operator)
+        {
+            case '+':
+            result = first + second;
+            break;
+            case '-':
+            result = first - second;
+            break;
+            case '*':
+            result = first * second;
+            break;
+            case '/':
+            result = first / second;
+            break;
+            // operator doesn't match any case constant (+, -, *, /)
+            default:
+            System.out.printf("Error! operator is not correct");
+            return;
+        }
+
+        //printing result
+        System.out.println("%.1f %c %.1f = %.1f", first, operator, second, result);
+    }
+}
